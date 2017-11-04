@@ -22,4 +22,4 @@ def sign(params: Dict[str, str], secret: str) -> str:
     """
 
     p = secret + ''.join(f'{k}{v}' for k, v in sorted(params.items()))
-    return hashlib.md5(p.encode('ascii')).hexdigest()
+    return hashlib.md5(p.encode('utf-8')).hexdigest()
